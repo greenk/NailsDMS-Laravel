@@ -13,18 +13,18 @@ class EmployeeTb extends Migration
     public function up()
     {
         //Create employee table
-		Schema::create('employee_tb', function (Blueprint $table) {
+		Schema::create('employee_tbs', function (Blueprint $table) {
 			$table->engine = 'InnoDB';			
 			
-			$table->increments('e_id');
+			$table->increments('id');
 			$table->string('e_phone', 50);
-			$table->string('e_email', 128);
+			$table->string('e_email', 128)->nullable();
 			$table->string('e_first_name', 128);
 			$table->string('e_last_name', 128);
-			$table->string('e_street', 255);
-			$table->string('e_city', 255);
-			$table->string('e_state', 128);
-			$table->string('e_zip', 128);
+			$table->string('e_street', 255)->nullable();
+			$table->string('e_city', 255)->nullable();
+			$table->string('e_state', 128)->nullable();
+			$table->string('e_zip', 128)->nullable();
 			
 			$table->string('e_password', 255);
 			$table->tinyInteger('e_at_work');
@@ -36,6 +36,9 @@ class EmployeeTb extends Migration
 			
 			// Add this column for using migration
 			$table->timestamps();
+			
+			// Add this for remember user session
+			$table->rememberToken();
 			
 			// Do not need this because increment() also sets primary key
 			//$table->primary('e_id');
@@ -51,6 +54,6 @@ class EmployeeTb extends Migration
     public function down()
     {
         //Drop employee table
-		Schema::drop('employee_tb');
+		Schema::drop('employee_tbs');
     }
 }
