@@ -37,6 +37,6 @@ class CustomerTb extends Migration
     public function down()
     {
         //Drop customer_tb table
-		Schema::drop('customer_tbs');
+		Schema::dropIfExists('customer_tbs');
     }
 }

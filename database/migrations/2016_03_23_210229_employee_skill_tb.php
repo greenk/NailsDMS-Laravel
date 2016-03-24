@@ -39,6 +39,6 @@ class EmployeeSkillTb extends Migration
     public function down()
     {
         //Drop employee_skill_tb table
-		Schema::drop('employee_skill_tbs');
+		Schema::dropIfExists('employee_skill_tbs');
     }
 }

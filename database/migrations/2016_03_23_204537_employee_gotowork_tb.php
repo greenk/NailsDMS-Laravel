@@ -42,6 +42,6 @@ class EmployeeGotoworkTb extends Migration
     public function down()
     {
         //Drop employee_gotowork_tb
-		Schema::drop('employee_gotowork_tbs');
+		Schema::dropIfExists('employee_gotowork_tbs');
     }
 }

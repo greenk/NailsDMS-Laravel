@@ -54,6 +54,6 @@ class EmployeeTb extends Migration
     public function down()
     {
         //Drop employee table
-		Schema::drop('employee_tbs');
+		Schema::dropIfExists('employee_tbs');
     }
 }

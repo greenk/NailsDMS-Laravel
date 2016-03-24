@@ -37,6 +37,6 @@ class WorkTypeTb extends Migration
     public function down()
     {
         //Drop work_type_tb table
-		Schema::drop('work_type_tbs');
+		Schema::dropIfExists('work_type_tbs');
     }
 }
