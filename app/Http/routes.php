@@ -16,5 +16,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
         return view('welcome');
     });
+	
+	Route::get('/employee', 'employee_detail_controller@index');
+	Route::get('/employee/save', 'employee_detail_controller@save_employee');
+	
+	Route::get('/employee/create', 'employee_detail_controller@create_employee');
 
 });

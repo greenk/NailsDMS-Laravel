@@ -27,10 +27,10 @@ class EmployeeTb extends Migration
 			$table->string('e_zip', 128)->nullable();
 			
 			$table->string('e_password', 255);
-			$table->tinyInteger('e_at_work');
-			$table->tinyInteger('e_working');
-			$table->dateTime('e_check_in');
-			$table->dateTime('e_check_out');
+			$table->tinyInteger('e_at_work')->default(0);
+			$table->tinyInteger('e_working')->default(0);
+			$table->dateTime('e_check_in')->nullable();
+			$table->dateTime('e_check_out')->nullable();
 			
 			$table->string('e_avatar_url', 2083);
 			
