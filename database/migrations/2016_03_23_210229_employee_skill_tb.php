@@ -17,10 +17,14 @@ class EmployeeSkillTb extends Migration
 		Schema::create('employee_skill_tbs', function (Blueprint $table) {
 			$table->engine = 'InnoDB';			
 			
+			
+			$table->increments('id');
+			
 			$table->integer('employee_id')->unsigned();			
 			$table->string('e_skill', 128);
 			
-			$table->primary(['e_skill', 'employee_id']);
+			//$table->primary(['e_skill', 'employee_id']);
+			
 			$table->foreign('employee_id')->references('id')->on('employee_tbs');			
 			
 			// Add this column for using migration

@@ -19,7 +19,7 @@ class WorkTypeTb extends Migration
 			
 			$table->increments('id');
 			$table->string('work_name', 255);
-			$table->string('work_category', 128)->default('Other');
+			$table->string('work_category', 255)->default('Other');
 			$table->text('description')->nullable();
 			$table->float('work_price', 10,2)->default(00.00);
 			

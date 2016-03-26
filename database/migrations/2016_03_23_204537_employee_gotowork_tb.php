@@ -17,13 +17,17 @@ class EmployeeGotoworkTb extends Migration
 		Schema::create('employee_gotowork_tbs', function (Blueprint $table) {
 			$table->engine = 'InnoDB';			
 			
+			$table->increments('id');
+			
 			$table->dateTime('date_at_work');
 			$table->dateTime('time_at_work');
 			$table->dateTime('time_leave_work')->nullable();
 			
 			$table->integer('employee_id')->unsigned();			
 			
-			$table->primary(['date_at_work', 'employee_id']);
+			
+			//$table->primary(['date_at_work', 'employee_id']);
+			
 			$table->foreign('employee_id')->references('id')->on('employee_tbs');			
 			
 			// Add this column for using migration

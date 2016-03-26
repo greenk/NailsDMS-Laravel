@@ -18,8 +18,14 @@ Route::group(['middleware' => ['web']], function () {
     });
 	
 	Route::get('/employee', 'employee_detail_controller@index');
-	Route::get('/employee/save', 'employee_detail_controller@save_employee');
+		
+	Route::get('/employee/edit/{id}', 'employee_detail_controller@get_employee_update')->where('id', '[0-9]+');
+	Route::post('/employee/edit/{id}', 'employee_detail_controller@post_employee_update')->where('id', '[0-9]+');
+	Route::get('/employee/{id}', 'employee_detail_controller@get_employee_detail')->where('id', '[0-9]+');
+	
+	Route::post('/employee/{id}/skill', 'Employee_Skill_Controller@add_employee_skill')->where('id', '[0-9]+');
 	
 	Route::get('/employee/create', 'employee_detail_controller@create_employee');
+	Route::post('/employee/create', 'employee_detail_controller@save_employee');
 
 });
