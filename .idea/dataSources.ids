@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - learn-laravel@localhost" uuid="f18e46ed-079d-42ae-b2e4-c8a7f66d8856">
+    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="learn-laravel"/>
+    <table name="customer_tbs" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="c_phone" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c_email" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" def="J2N1c3RvbWVyQGRlZmF1bHRlbWFpbC5jb20n"/>
+      <column name="c_firstname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c_lastname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="work_tbs_customer_id_foreign" table="work_tbs" schema="" catalog="learn-laravel" columns="customer_id"/>
+    </table>
+    <table name="employee_gotowork_tbs" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date_at_work" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="time_at_work" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="time_leave_work" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="employee_gotowork_tbs_employee_id_foreign" columns="employee_id" ref-table="employee_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="employee_gotowork_tbs_employee_id_foreign" unique="false" columns="employee_id"/>
+    </table>
+    <table name="employee_skill_tbs" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="e_skill" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="employee_skill_tbs_employee_id_foreign" columns="employee_id" ref-table="employee_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="employee_skill_tbs_employee_id_foreign" unique="false" columns="employee_id"/>
+    </table>
+    <table name="employee_tbs" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="e_phone" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="e_email" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="e_first_name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="e_last_name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="e_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="e_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="e_state" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="e_zip" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
+      <column name="e_password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="e_at_work" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="e_working" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="e_check_in" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="e_check_out" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="e_avatar_url" sqlType="VARCHAR" precision="2083" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="employee_gotowork_tbs_employee_id_foreign" table="employee_gotowork_tbs" schema="" catalog="learn-laravel" columns="employee_id"/>
+      <exported-key name="employee_skill_tbs_employee_id_foreign" table="employee_skill_tbs" schema="" catalog="learn-laravel" columns="employee_id"/>
+      <exported-key name="work_tbs_employee_id_foreign" table="work_tbs" schema="" catalog="learn-laravel" columns="employee_id"/>
+    </table>
+    <table name="migrations" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="password_resets" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <index name="password_resets_email_index" unique="false" columns="email"/>
+      <index name="password_resets_token_index" unique="false" columns="token"/>
+    </table>
+    <table name="users" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+    </table>
+    <table name="work_tbs" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="work_created_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="work_started_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="work_finished_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="total" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="total_tip" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="cash_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="card_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="cash_tip_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="card_tip_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="customer_id" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="work_type_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="work_tbs_customer_id_foreign" columns="customer_id" ref-table="customer_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="work_tbs_employee_id_foreign" columns="employee_id" ref-table="employee_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="work_tbs_work_type_id_foreign" columns="work_type_id" ref-table="work_type_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="work_tbs_customer_id_foreign" unique="false" columns="customer_id"/>
+      <index name="work_tbs_employee_id_foreign" unique="false" columns="employee_id"/>
+      <index name="work_tbs_work_type_id_foreign" unique="false" columns="work_type_id"/>
+    </table>
+    <table name="work_type_tbs" schema="" catalog="learn-laravel" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="work_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="work_category" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" def="J090aGVyJw=="/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="work_price" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="work_tbs_work_type_id_foreign" table="work_tbs" schema="" catalog="learn-laravel" columns="work_type_id"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - learn-laravel@localhost" uuid="f18e46ed-079d-42ae-b2e4-c8a7f66d8856">
+      <secret-storage>master_key</secret-storage>
+      <user-name>binh-laravel</user-name>
+      <schema-pattern>learn-laravel.*</schema-pattern>
+      <default-schemas>learn-laravel.*</default-schemas>
+    </data-source>
+  </component>
+</project>
