@@ -29,7 +29,10 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/employee';
-    protected $redirectAfterLogout = '/employee';
+    protected  $loginPath = 'users/login';
+
+    // Need to test this one
+    //protected $redirectAfterLogout = '/employee';
 
     /**
      * Create a new authentication controller instance.
@@ -38,9 +41,9 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('guest', ['except' => ['logout', 'getLogout']]);
+        $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
 
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        //$this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
     /**

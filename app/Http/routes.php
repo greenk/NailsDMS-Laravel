@@ -37,5 +37,9 @@ Route::group(['middleware' => ['web']], function () {
 	//Route::get('users/logout', 'Auth\AuthController@getLogout');
 	Route::get('users/logout', 'Auth\AuthController@getLogout');
 
+	Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'), function() {
+		Route::get('users', 'UsersController@index');
+	});
+
 
 });
