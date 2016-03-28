@@ -73,8 +73,10 @@ class employee_detail_controller extends Controller
 	public function get_employee_detail( $id )
 	{
 		$employee = employee_tbs::where('id', $id)->firstOrFail();
+
+		$employee_skill = $employee->employee_skill_tbs()->get();
 		
-		return view('employee_view.detail', compact('employee'));
+		return view('employee_view.detail', compact('employee', 'employee_skill'));
 	}
 	
 	/**
@@ -84,8 +86,10 @@ class employee_detail_controller extends Controller
 	public function get_employee_update ($id)
 	{
 		$employee = employee_tbs::where('id', $id)->firstOrFail();
+
+		$employee_skills = $employee->employee_skill_tbs()->get();
 		
-		return view('employee_view.update', compact('employee'));
+		return view('employee_view.update', compact('employee', 'employee_skills'));
 			
 	}
 	/**

@@ -1,125 +1,390 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - learn-laravel@localhost" uuid="f18e46ed-079d-42ae-b2e4-c8a7f66d8856">
-    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.5.5-10.1.10-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
-    <schema name="" catalog="learn-laravel"/>
-    <table name="customer_tbs" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="c_phone" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="c_email" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" def="J2N1c3RvbWVyQGRlZmF1bHRlbWFpbC5jb20n"/>
-      <column name="c_firstname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="c_lastname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="work_tbs_customer_id_foreign" table="work_tbs" schema="" catalog="learn-laravel" columns="customer_id"/>
-    </table>
-    <table name="employee_gotowork_tbs" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="date_at_work" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="time_at_work" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="time_leave_work" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="employee_gotowork_tbs_employee_id_foreign" columns="employee_id" ref-table="employee_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="employee_gotowork_tbs_employee_id_foreign" unique="false" columns="employee_id"/>
-    </table>
-    <table name="employee_skill_tbs" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="e_skill" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="employee_skill_tbs_employee_id_foreign" columns="employee_id" ref-table="employee_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="employee_skill_tbs_employee_id_foreign" unique="false" columns="employee_id"/>
-    </table>
-    <table name="employee_tbs" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="e_phone" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="e_email" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
-      <column name="e_first_name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
-      <column name="e_last_name" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
-      <column name="e_street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="e_city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="e_state" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
-      <column name="e_zip" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12"/>
-      <column name="e_password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="e_at_work" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <column name="e_working" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <column name="e_check_in" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="e_check_out" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="e_avatar_url" sqlType="VARCHAR" precision="2083" scale="0" nullable="false" jdbcType="12"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="employee_gotowork_tbs_employee_id_foreign" table="employee_gotowork_tbs" schema="" catalog="learn-laravel" columns="employee_id"/>
-      <exported-key name="employee_skill_tbs_employee_id_foreign" table="employee_skill_tbs" schema="" catalog="learn-laravel" columns="employee_id"/>
-      <exported-key name="work_tbs_employee_id_foreign" table="work_tbs" schema="" catalog="learn-laravel" columns="employee_id"/>
-    </table>
-    <table name="migrations" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-    </table>
-    <table name="password_resets" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
-      <index name="password_resets_email_index" unique="false" columns="email"/>
-      <index name="password_resets_token_index" unique="false" columns="token"/>
-    </table>
-    <table name="users" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="users_email_unique" unique="true" columns="email"/>
-    </table>
-    <table name="work_tbs" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
-      <column name="work_created_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="work_started_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="work_finished_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="total" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="total_tip" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="cash_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="card_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="cash_tip_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="card_tip_amount" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="customer_id" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="work_type_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="work_tbs_customer_id_foreign" columns="customer_id" ref-table="customer_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="work_tbs_employee_id_foreign" columns="employee_id" ref-table="employee_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="work_tbs_work_type_id_foreign" columns="work_type_id" ref-table="work_type_tbs" ref-schema="" ref-catalog="learn-laravel" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="work_tbs_customer_id_foreign" unique="false" columns="customer_id"/>
-      <index name="work_tbs_employee_id_foreign" unique="false" columns="employee_id"/>
-      <index name="work_tbs_work_type_id_foreign" unique="false" columns="work_type_id"/>
-    </table>
-    <table name="work_type_tbs" schema="" catalog="learn-laravel" type="TABLE">
-      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="work_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="work_category" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12" def="J090aGVyJw=="/>
-      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <column name="work_price" sqlType="DOUBLE" precision="10" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
-      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="work_tbs_work_type_id_foreign" table="work_tbs" schema="" catalog="learn-laravel" columns="work_type_id"/>
-    </table>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="learn-laravel"/>
+      <table id="2" parent="1" name="customer_tbs"/>
+      <table id="3" parent="1" name="employee_gotowork_tbs"/>
+      <table id="4" parent="1" name="employee_skill_tbs"/>
+      <table id="5" parent="1" name="employee_tbs"/>
+      <table id="6" parent="1" name="migrations"/>
+      <table id="7" parent="1" name="password_resets"/>
+      <table id="8" parent="1" name="users"/>
+      <table id="9" parent="1" name="work_tbs"/>
+      <table id="10" parent="1" name="work_type_tbs"/>
+      <column id="11" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="12" parent="2" name="c_phone">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="13" parent="2" name="c_email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+        <default-expression>&apos;customer@defaultemail.com&apos;</default-expression>
+      </column>
+      <column id="14" parent="2" name="c_firstname">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="15" parent="2" name="c_lastname">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="16" parent="2" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="17" parent="2" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <key id="18" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="19" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="20" parent="3" name="date_at_work">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="21" parent="3" name="time_at_work">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="22" parent="3" name="time_leave_work">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="23" parent="3" name="employee_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="24" parent="3" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="25" parent="3" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="26" parent="3" name="employee_gotowork_tbs_employee_id_foreign">
+        <columns>employee_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="27" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="28" parent="3" name="employee_gotowork_tbs_employee_id_foreign">
+        <columns>employee_id</columns>
+        <ref-key>~.employee_tbs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="29" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="30" parent="4" name="employee_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="31" parent="4" name="e_skill">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="32" parent="4" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="33" parent="4" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="34" parent="4" name="employee_skill_tbs_employee_id_foreign">
+        <columns>employee_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="35" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="36" parent="4" name="employee_skill_tbs_employee_id_foreign">
+        <columns>employee_id</columns>
+        <ref-key>~.employee_tbs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="37" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="38" parent="5" name="e_phone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="39" parent="5" name="e_email">
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="40" parent="5" name="e_first_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="41" parent="5" name="e_last_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="42" parent="5" name="e_street">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="43" parent="5" name="e_city">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="44" parent="5" name="e_state">
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="45" parent="5" name="e_zip">
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="46" parent="5" name="e_password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="47" parent="5" name="e_at_work">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="48" parent="5" name="e_working">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="49" parent="5" name="e_check_in">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="50" parent="5" name="e_check_out">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="51" parent="5" name="e_avatar_url">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2083)</data-type>
+      </column>
+      <column id="52" parent="5" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="53" parent="5" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="54" parent="5" name="remember_token">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <key id="55" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="56" parent="6" name="migration">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="57" parent="6" name="batch">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="7" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="59" parent="7" name="token">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="60" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <index id="61" parent="7" name="password_resets_email_index">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="62" parent="7" name="password_resets_token_index">
+        <columns>token</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <column id="63" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="64" parent="8" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="65" parent="8" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="66" parent="8" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="67" parent="8" name="remember_token">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="68" parent="8" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="69" parent="8" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="70" parent="8" name="users_email_unique">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="71" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="72" parent="8" name="users_email_unique">
+        <columns>email</columns>
+        <underlying-index>users_email_unique</underlying-index>
+      </key>
+      <column id="73" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="74" parent="9" name="work_created_date">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="75" parent="9" name="work_started_date">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="76" parent="9" name="work_finished_date">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="77" parent="9" name="total">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="78" parent="9" name="total_tip">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="79" parent="9" name="cash_amount">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="80" parent="9" name="card_amount">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="81" parent="9" name="cash_tip_amount">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="82" parent="9" name="card_tip_amount">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="83" parent="9" name="employee_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="84" parent="9" name="customer_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+      </column>
+      <column id="85" parent="9" name="work_type_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="86" parent="9" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="87" parent="9" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="88" parent="9" name="work_tbs_customer_id_foreign">
+        <columns>customer_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="89" parent="9" name="work_tbs_employee_id_foreign">
+        <columns>employee_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="90" parent="9" name="work_tbs_work_type_id_foreign">
+        <columns>work_type_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="91" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="92" parent="9" name="work_tbs_customer_id_foreign">
+        <columns>customer_id</columns>
+        <ref-key>~.customer_tbs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="93" parent="9" name="work_tbs_employee_id_foreign">
+        <columns>employee_id</columns>
+        <ref-key>~.employee_tbs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="94" parent="9" name="work_tbs_work_type_id_foreign">
+        <columns>work_type_id</columns>
+        <ref-key>~.work_type_tbs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="95" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="96" parent="10" name="work_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="10" name="work_category">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;Other&apos;</default-expression>
+      </column>
+      <column id="98" parent="10" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="99" parent="10" name="work_price">
+        <mandatory>1</mandatory>
+        <data-type>double(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="100" parent="10" name="created_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="101" parent="10" name="updated_at">
+        <data-type>timestamp</data-type>
+      </column>
+      <key id="102" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
   </data-source>
 </component>

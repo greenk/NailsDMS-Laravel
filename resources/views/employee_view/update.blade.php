@@ -116,11 +116,11 @@
                     <legend>Skill Set</legend>
                     <div class="form-group">
                         <div class="col-lg-12">
-                            <input type="checkbox" name="skills[]" id="manicure" value="manicure"> Manicure <br />
-                            <input type="checkbox" name="skills[]" id="pedicure" value="pedicure"> Pedicure <br />
-                            <input type="checkbox" name="skills[]" id="gel" value="gel"> Gel <br />
-                            <input type="checkbox" name="skills[]" id="acrylic" value="acrylic"> Acrylic <br />
-                            <input type="checkbox" name="skills[]" id="eyebrowns" value="eyebrowns"> Eye Browns <br />
+                            <input type="checkbox" name="skills[]" id="manicure" value="manicure" @foreach($employee_skills as $e_skill) @if ($e_skill->e_skill == 'manicure') checked @endif @endforeach> Manicure <br />
+                            <input type="checkbox" name="skills[]" id="pedicure" value="pedicure" @foreach($employee_skills as $e_skill) @if ($e_skill->e_skill == 'pedicure') checked @endif @endforeach > Pedicure <br />
+                            <input type="checkbox" name="skills[]" id="gel" value="gel" @foreach($employee_skills as $e_skill) @if ($e_skill->e_skill == 'gel') checked @endif @endforeach> Gel <br />
+                            <input type="checkbox" name="skills[]" id="acrylic" value="acrylic" @foreach($employee_skills as $e_skill) @if ($e_skill->e_skill == 'acrylic') checked @endif @endforeach > Acrylic <br />
+                            <input type="checkbox" name="skills[]" id="eyebrowns" value="eyebrowns" @foreach($employee_skills as $e_skill) @if ($e_skill->e_skill == 'eyebrowns') checked @endif @endforeach > Eye Browns <br />
                         </div>
                     </div>
 
