@@ -159,6 +159,9 @@ return [
 		/* Add HTML provider class */
 		Collective\Html\HtmlServiceProvider::class,
 
+		/* Add Entrust - role and manager user class */
+		Zizaco\Entrust\EntrustServiceProvider::class,
+
     ],
 
     /*
@@ -207,6 +210,7 @@ return [
 		
 		'Form' => Collective\Html\FormFacade::class,
 		'Html' => Collective\Html\HtmlFacade::class,
+		'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
