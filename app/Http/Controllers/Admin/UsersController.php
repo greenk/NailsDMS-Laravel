@@ -1,6 +1,5 @@
 <?php
 
-//namespace App\Http\Controllers\Admin;
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
@@ -10,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * Show all the current employee
