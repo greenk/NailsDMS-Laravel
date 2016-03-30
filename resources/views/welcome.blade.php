@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
+                <h3> {!! trans('main.subtitle') !!}</h3>
             </div>
         </div>
     </body>
