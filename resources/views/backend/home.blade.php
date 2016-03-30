@@ -52,8 +52,8 @@
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-material-info"></i></div>
                             <h4 class="list-group-item-heading">Manage Categories</h4>
-                            <a href="/admin/categories" class="btn btn-default btn-raised">All Categories</a>
-                            <a href="/admin/categories/create" class="btn btn-primary btn-raised">New Category</a>
+                            <a href="admin/categories" class="btn btn-default btn-raised">All Categories</a>
+                            <a href="admin/categories/create" class="btn btn-primary btn-raised">New Category</a>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>

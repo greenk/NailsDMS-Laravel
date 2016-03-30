@@ -28,6 +28,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/employee/create', 'employee_detail_controller@create_employee');
 	Route::post('/employee/create', 'employee_detail_controller@save_employee');
 
+	Route::get('/blog', 'BlogController@index');
+
 	Route::get('users/register', 'Auth\AuthController@getRegister');
 	Route::post('users/register', 'Auth\AuthController@postRegister');
 
