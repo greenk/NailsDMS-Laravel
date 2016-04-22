@@ -21,14 +21,18 @@ class EmployeeTb extends Migration
 			$table->string('e_email', 128)->nullable();
 			$table->string('e_first_name', 128);
 			$table->string('e_last_name', 128);
+			$table->string('e_american_name', 128);
 			$table->string('e_street', 255)->nullable();
 			$table->string('e_city', 255)->nullable();
 			$table->string('e_state', 128)->nullable();
 			$table->string('e_zip', 128)->nullable();
 			
-			$table->string('e_password', 255);
+			$table->string('e_password', 255);			
+			
 			$table->tinyInteger('e_at_work')->default(0);
 			$table->tinyInteger('e_working')->default(0);
+			$table->string('e_status', 64)->nullable();
+			
 			$table->dateTime('e_check_in')->nullable();
 			$table->dateTime('e_check_out')->nullable();
 			

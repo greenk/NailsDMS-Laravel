@@ -18,15 +18,24 @@ class WorkTb extends Migration
 			$table->engine = 'InnoDB';			
 			
 			$table->bigIncrements('id');
+			
 			$table->datetime('work_created_date');
 			$table->datetime('work_started_date')->nullable();
-			$table->datetime('work_finished_date')->nullable();
+			$table->datetime('work_finished_date')->nullable();			
+			$table->string('work_status', 255)->nullable();			
+			
 			$table->float('total', 10,2)->default(00.00);
 			$table->float('total_tip', 10,2)->default(00.00);
 			$table->float('cash_amount', 10,2)->default(00.00);			
 			$table->float('card_amount', 10,2)->default(00.00);
+			$table->float('gift_amount', 10,2)->default(00.00);
+			
 			$table->float('cash_tip_amount', 10,2)->default(00.00);
-			$table->float('card_tip_amount', 10,2)->default(00.00);
+			$table->float('card_tip_amount', 10,2)->default(00.00);			
+			$table->float('gift_tip_amount', 10,2)->default(00.00);
+			
+			$table->integer('request_for')->nullable();
+			
 			
 			$table->integer('employee_id')->unsigned();
 			$table->bigInteger('customer_id')->unsigned();
